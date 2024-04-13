@@ -7,12 +7,25 @@ using namespace std;
 #define endl '\n'
  
 /*----------------------------------------------------------------------------------------*/
-void solve() 
+void solve()
 {
-   int n ; cin >> n ;
-   
-}
+  int n ; cin >> n ;
 
+  int lost = 0 , win = 0;
+  for(int i = 0 ; i < n-1 ; ++i)
+  {
+      int x; cin >> x; 
+
+      if(x < 0)lost += x;
+      else win += x;
+  }
+
+  lost += win;
+
+  if(lost < 0)cout << abs(lost) << endl;
+  else cout << -lost << endl;
+
+}
 
 /*----------------------------------------------------------------------------------------*/
  
@@ -24,7 +37,5 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-   int t ; cin >> t;
-
-   while(t--)solve();
+   solve();
 }

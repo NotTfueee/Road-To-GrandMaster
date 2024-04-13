@@ -7,12 +7,37 @@ using namespace std;
 #define endl '\n'
  
 /*----------------------------------------------------------------------------------------*/
-void solve() 
+void solve()
 {
-   int n ; cin >> n ;
-   
-}
+   int k , q ; cin >> k >> q;
+   vector<int>v(k);
 
+   for(auto&i : v) cin >> i;
+
+   for(int i = 0 ; i < q; ++i)
+   {
+      int n ; cin >> n ;
+
+      int temp = n;
+
+      while(temp >= v[0])
+      {
+         int c = 0;
+         for(int j = 0 ; j < k ; ++j)
+         {
+            if(v[j] <= temp)c++;
+
+         }
+
+         temp -= c;
+      }
+
+      cout << temp << " ";
+   }
+
+   cout << endl;
+
+}
 
 /*----------------------------------------------------------------------------------------*/
  

@@ -7,12 +7,33 @@ using namespace std;
 #define endl '\n'
  
 /*----------------------------------------------------------------------------------------*/
-void solve() 
+void solve()
 {
    int n ; cin >> n ;
-   
-}
 
+   vector<int>v(n);
+
+   set<int> set;
+   for(int i = 0 ; i < n ; ++i)
+   {
+      cin >> v[i];
+   }
+   long long ans = 0;
+   for(int i = 0 ; i < n ; i ++)
+   {
+      if(set.find(v[i]) != set.end())
+         {
+            ans++;
+            set.insert(v[i]);
+         }
+         else set.insert(v[i]);
+
+   }
+
+   cout << ans << endl;
+   return;
+
+}
 
 /*----------------------------------------------------------------------------------------*/
  

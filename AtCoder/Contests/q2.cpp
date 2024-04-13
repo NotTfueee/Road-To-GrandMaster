@@ -7,12 +7,36 @@ using namespace std;
 #define endl '\n'
  
 /*----------------------------------------------------------------------------------------*/
-void solve() 
+void solve()
 {
-   int n ; cin >> n ;
-   
-}
+   string s;
+    cin >> s;
 
+    map<char, int> freqMap;
+
+    for (auto c : s)
+        freqMap[c]++;
+
+    map<int, vector<char>> check;
+
+    for (auto i : freqMap) {
+        int key = i.second;
+        char val = i.first;
+        check[key].push_back(val);
+    }
+
+    for(auto i : check)
+    {
+      if(i.second.size() != 0 && i.second.size() != 2)
+      {
+         cout << "No" << endl;
+         return;
+      }
+    }
+
+    cout << "Yes" << endl;
+    return;
+}
 
 /*----------------------------------------------------------------------------------------*/
  
@@ -24,7 +48,5 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-   int t ; cin >> t;
-
-   while(t--)solve();
+   solve();
 }

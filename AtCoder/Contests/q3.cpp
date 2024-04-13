@@ -7,12 +7,25 @@ using namespace std;
 #define endl '\n'
  
 /*----------------------------------------------------------------------------------------*/
-void solve() 
+void solve()
 {
-   int n ; cin >> n ;
-   
-}
+   string s , t ; cin >> s >> t;
 
+   int r = 0 ;
+   for(int i = 0 ; i < s.size() && r < 3; ++i)
+   {
+      if(tolower(t[r]) == s[i])
+      {
+         r++;
+      }
+   }
+
+
+   if(r > 2)cout << "Yes" << endl;
+   else if(r == 2 && t[r] == 'X')cout << "Yes" << endl;
+   else cout << "No" << endl;
+   return;
+}
 
 /*----------------------------------------------------------------------------------------*/
  
@@ -24,7 +37,5 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-   int t ; cin >> t;
-
-   while(t--)solve();
+   solve();
 }
