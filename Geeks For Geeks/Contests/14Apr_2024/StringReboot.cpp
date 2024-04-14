@@ -9,25 +9,23 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve() 
 {
-    int n ; cin >> n ;
+    /*
+    we just need to find if both the strings consist of 01 at the same location 
+    if yes then we can make the strings equal else no we cannot make the strings equal
+    */
+    string a , b ; cin >> a >> b;
 
-    vector<vector<long long >>arr(n , vector<long long>(2));
-
-    for(int i = 0 ; i < n ; ++i)
+    int n = a.size();
+    for(int i = 0 ; i < n - 1; ++i)
     {
-        long long a , b; cin >> a >> b;
-        arr[i][0] = a;
-        arr[i][1] = b;
+        if(a[i] == '0' && a[i+1] == '1' && b[i] == a[i] && b[i+1] == a[i+1])
+        {
+            cout << 1 << endl;
+            return;
+        }
     }
 
-    long long dp[200001] = {};
-
-    for(int i = n-1 ; i >= 0 ; --i)
-    {
-        dp[i] = max(dp[i+1] , arr[i][0] + dp[i + arr[i][1] + 1]);
-    }
-
-    cout << dp[0] << endl;
+    cout << 0 << endl;
     return;
 }
 /*----------------------------------------------------------------------------------------*/
