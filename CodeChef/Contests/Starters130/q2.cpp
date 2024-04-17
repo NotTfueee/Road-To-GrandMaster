@@ -12,49 +12,37 @@ void solve()
     int n ; cin >> n ;
     string s ; cin >> s;
 
-    vector<int> v;
-
-    for(int i = 0 ; i < n-1; i += 2)
-    {
-        if(s[i] != s[i+1])
-        {
-            v.push_back(i);
-        }
-    }
-
-    for(int i = 1 ; i < v.size() ; ++i)
-    {
-        if(s[v[i]] == s[v[i-1]])
-        {
-            cout << -1 << endl;
-            return;
-        }
-    }
-
-    int so = 0;
-    if(v.size() > 0)
-    {
-
-        if(s[v[0]] == '1')
-        {
-            so = 1;
-            v[0]++;
-        }
-    }
-    else 
+    if(n == 1)
     {
         cout << 0 << endl;
         return;
     }
-
-    for(int i = 1 ; i < v.size() ; ++i)
+    else if(n == 2)
     {
-        if(so)v[i]++;
+        if(s[0] == s[1])
+        {
+            cout << 1 << endl;
+        }
+        else cout << 0 << endl;
+
+        return;
     }
 
-    cout << v.size() << endl;
-    for(auto i : v)cout << i + 1 << " ";
-    cout << endl;
+    int ans = 0 , start = 0;
+
+    for(int i = 1 ; i < n ; ++i)
+    {
+        if(s[i] != s[i-1])
+        {
+            ans += (i - start -1);
+            start = i;
+        }
+    }
+
+    ans += (n - start - 1);
+
+    cout << ans << endl;
+    return;
 }
 /*----------------------------------------------------------------------------------------*/
 
