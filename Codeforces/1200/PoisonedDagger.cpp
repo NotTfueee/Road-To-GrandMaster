@@ -9,7 +9,35 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
+   long long n , h ; cin >> n >> h;
+
+   vector<long long > v(n);
+
+   for(auto&i : v)cin >> i;
+
+   long long l = 1 , r = 1e18 , ans =1;   
    
+   while(l <= r)
+   {
+      long long mid = ((l + r) >> 1);
+
+      long long sum = mid;
+
+      for(int i = 0 ; i < n - 1; ++i)
+      {
+         sum += min(mid , v[i+1] - v[i]);
+      }
+
+      if(sum < h) l = mid + 1;
+      else 
+      {
+         ans = mid;
+         r = mid - 1;
+      }
+   }
+
+   cout << ans << endl;
+   return;
 }
 /*----------------------------------------------------------------------------------------*/
 
