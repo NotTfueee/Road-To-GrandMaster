@@ -9,9 +9,18 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-   
-}
+   string s ;cin >> s;
 
+   string ss = s.substr(3 , 3);
+
+   int num = stoi(ss);
+
+   if(num >= 350 || num == 316)cout << "No" << endl;
+   else if(num >= 1 && num <= 349)cout << "Yes" << endl;
+   else cout << "No" << endl;
+
+   return;
+}
 /*----------------------------------------------------------------------------------------*/
 
 int main()
@@ -22,5 +31,5 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-      solve();
+   solve();
 }

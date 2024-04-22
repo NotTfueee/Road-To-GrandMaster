@@ -9,9 +9,32 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-   
-}
+   int n , q ; cin >> n >> q;
 
+   vector<int> v(q);
+
+  for(int i = 0 ; i < q; ++i)cin >> v[i];
+
+   set<int>set;
+   int count = 0;
+
+   for(int i = 0; i < q ; ++i)
+   {
+      if(set.find(v[i]) == set.end())
+      {
+         count ++;
+         set.insert(v[i]);
+      }
+      else
+      {
+         count --;
+         set.erase(v[i]);
+      }
+   }
+
+   cout << n - count << endl;
+   return;
+}
 /*----------------------------------------------------------------------------------------*/
 
 int main()
@@ -22,5 +45,5 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-      solve();
+   solve();
 }
