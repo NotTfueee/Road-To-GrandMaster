@@ -8,7 +8,33 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-   
+   int n ; cin >> n ;
+
+   int two = 0 , three = 0;
+
+   while(n > 1 && n % 2 == 0)
+   {
+      n /= 2;
+      two++;
+   }
+
+   while(n > 1 && n % 3 == 0)
+   {
+      n /= 3;
+      three++;
+   }
+
+   if(n > 1 || two > three)cout << -1 << endl;
+   else
+   {
+      int needed = three - two;
+
+      int total = three + two + needed ;
+
+
+      cout << (total >> 1) + needed << endl;
+   }
+   return;
 }
 /*----------------------------------------------------------------------------------------*/
 
