@@ -6,9 +6,21 @@ using namespace std;
 #define endl '\n'
  
 /*----------------------------------------------------------------------------------------*/
+   
 void solve()
 {
-   
+   long long a , b; cin >> a >> b;
+
+   if(a == b)
+   {
+      cout << "0 0" << endl;
+      return;
+   }
+
+   long long diff = abs(a - b);
+   long long moves = min(a % diff , diff - (a % diff));
+   cout << diff << " " << moves << endl;
+   return;
 }
 /*----------------------------------------------------------------------------------------*/ 
 
@@ -19,8 +31,6 @@ int main()
    freopen("input.txt","r",stdin);
    freopen("output.txt","w",stdout);
 #endif
-
-   preprocess();
    int t ; cin >> t;
    while(t--)solve();
 }

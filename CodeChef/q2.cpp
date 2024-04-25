@@ -8,8 +8,33 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-   
+   int n , k ; cin >> n >> k;
+
+   vector<int>v(n);
+
+   for(int i = 0 ; i < n ; ++i)
+   {
+      cin >> v[i];
+   }
+
+   sort(v.begin() , v.end());
+
+   int sum = 0;
+
+   for(int i = 0 ; i < n ; ++i)
+   {
+      if(k > 0 && (7-v[i]) > v[i])
+      {
+         sum += (7-v[i]);
+         k--;
+      }
+      else sum += v[i];
+   }
+
+   cout << sum << endl;
 }
+
+
 /*----------------------------------------------------------------------------------------*/ 
 
 int main()
@@ -20,7 +45,6 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-   preprocess();
    int t ; cin >> t;
    while(t--)solve();
 }
