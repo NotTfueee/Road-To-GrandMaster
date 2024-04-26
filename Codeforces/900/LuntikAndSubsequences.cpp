@@ -8,20 +8,21 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
+   int n ; cin >> n ;
+   vector<long long > v(n);
 
-   long long x , n ; cin >> x >> n;
+   long long c0 = 0 , c1 = 0;
+   for(int i= 0 ; i < n ; ++i)
+   {
+      cin >> v[i];
+      if(v[i] == 0)c0 ++ ;
+      if(v[i] == 1) c1++;
+   }
 
-   long long d , mod = n % 4;
+   long long ans = (1LL << c0) * c1;
 
-    if(mod == 0)d = 0;
-    if(mod == 1)d = -n;
-    if(mod == 2)d = 1;
-    if(mod == 3)d = n+1;
-
-    if(x&1)cout << x - d << endl;
-    else cout << x + d << endl;
-    return;
-
+   cout << ans << endl;
+   return;
 }
 /*----------------------------------------------------------------------------------------*/ 
 

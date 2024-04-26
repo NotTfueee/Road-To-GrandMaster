@@ -15,17 +15,13 @@ bool getTernary(int val)
    vector<int> v;
    while(val >= 3)
    {
-      v.push_back(val % 3);
+      int d = val % 3 ;
+
+      if(d == 2) return true;
 
       val /= 3;
    }
-
-   v.push_back(val);
-
-   for(auto i : v)
-      if(i == 2)return true;
-
-
+   
    return false;
 }
 
