@@ -8,7 +8,24 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-   
+   int n ; cin >> n ;
+   vector<int> v(n+1);
+
+   for(int i = 1 ; i <= n ; ++i)
+   {
+      cin >> v[i];
+   }
+
+   int ans = 0;
+   for(int i = 1 ; i <= n ; ++i)
+   {
+      if(v[i] == i)continue;
+
+      ans = __gcd(ans , abs(v[i] - i));
+   }
+
+   cout << ans << endl;
+   return;
 }
 /*----------------------------------------------------------------------------------------*/ 
 
@@ -20,6 +37,6 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-   int t; cin >> t;
+   int t ; cin >> t;
    while(t--)solve();
 }

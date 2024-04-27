@@ -8,7 +8,20 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-   
+
+   long long x , n ; cin >> x >> n;
+
+   long long d , mod = n % 4;
+
+    if(mod == 0)d = 0;
+    if(mod == 1)d = -n;
+    if(mod == 2)d = 1;
+    if(mod == 3)d = n+1;
+
+    if(x&1)cout << x - d << endl;
+    else cout << x + d << endl;
+    return;
+
 }
 /*----------------------------------------------------------------------------------------*/ 
 
@@ -20,6 +33,6 @@ int main()
    freopen("output.txt","w",stdout);
 #endif
 
-   int t; cin >> t;
+   int t ; cin >> t;
    while(t--)solve();
 }
