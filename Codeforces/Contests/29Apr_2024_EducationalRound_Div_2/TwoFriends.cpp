@@ -8,28 +8,23 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 void solve()
 {
-    string s ; cin >> s;
+    int n ; cin >> n ;
+    vector<int>v(n+1);
 
-    long long one = 0 , ans  = 0 , n = s.size();
+    for(int i = 1 ; i <= n ; ++i)cin >> v[i];
 
-    for(long long i = 0 ; i < n ; ++i)
+    for(int i = 1 ; i <= n ; ++i)
     {
-        if(s[i] == '1')
+        if(v[v[i]] == i)
         {
-            one ++;
-            continue;
-        }
-
-        if(s[i] == '0' && one != 0)
-        {
-            long long len = one + 1;
-            ans += len;
+            cout << 2 << endl;
+            return;
         }
     }
 
-    cout << ans << endl;
+    cout << 3 << endl;
     return;
-    
+
 }
 /*----------------------------------------------------------------------------------------*/
 
