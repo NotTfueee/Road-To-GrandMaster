@@ -9,41 +9,29 @@ using namespace std;
 /*----------------------------------------------------------------------------------------*/
 
 const int space = 2*1e5 + 1;
-vector<int> nodes(space);
-
-void print(vector<int>&nodes)
-{
-   for(int i = 1 ; i < 5 ; ++i)cout << nodes[i] << " ";
-   cout << endl;
-   return;
-}
-
-void make_set(int v)
-{
-   nodes[v] = v;
-}
+vector<int> nodes(space,-1) , sz(space , 1);
 
 int find(int toFind)
 {
-   if(nodes[toFind] == toFind)return toFind;
+   if(nodes[toFind] == -1)return toFind;
 
    return nodes[toFind] = find(nodes[toFind]);
 }
 
 void union_set(int from , int to)
 {
-   from = find(from);
-   to = find(to);
+   int pFrom = find(from);
+   int pTo = find(to);
 
-   nodes[from] = to;
+   if(pFrom == pTo)return;
+
+   sz[pTo] += sz[pFrom];
+   nodes[pFrom] = pTo;
 }
-
 
 void solve()
 {
-   int n , m ; cin >> n >> m;
-
-   for(int i = 1 ; i <= n ; ++i)make_set(i);
+   int n , m ; cin >> n >> m ;
 
    for(int i = 0 ; i < m ; ++i)
    {
@@ -52,7 +40,7 @@ void solve()
       union_set(from , to);
    }
 
-   print(nodes);
+   return;
 }
 /*----------------------------------------------------------------------------------------*/
 
