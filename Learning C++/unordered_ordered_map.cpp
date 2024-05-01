@@ -38,6 +38,13 @@ int main()
         cout << it-> first << " " << it->second << endl;
     }
 
+    // to iterate the map in reverse order we do 
+
+    for(auto it = map.rbegin() ; it != map.rend() ; ++i)
+    {
+        cout << it-> first << " " << i->second << endl;
+    }
+
     // to find if an element is present in the map or not 
     bool isPresent = map.find(-1) != map.end();
     /* if the value of isPresent is true means that the element is not present in the map as the
