@@ -6,26 +6,9 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
-void solve() 
+void solve()
 {
-    long long n;
-    cin >> n;
-
-    vector<long long> x(n + 1);
-
-    for (long long i = 2; i <= n; ++i)cin >> x[i];
-
-    x[1] = 501;
-
-    cout << x[1] << " ";
-    for(int i = 2 ; i <= n ; ++i)
-    {
-        x[i] = x[i-1] + x[i];
-        cout << x[i] << " ";
-    }
-
-    cout << endl;
-    return;
+    
 }
 /*----------------------------------------------------------------------------------------*/
 
