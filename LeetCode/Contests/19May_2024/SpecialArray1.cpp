@@ -6,9 +6,27 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
+
 void solve()
 {
     
+        int n = nums.size();
+        vector<int> v(n);
+        
+        for(int i = 0 ; i < n ; ++i)
+        {
+            if(nums[i] & 1)v[i] = 1;
+            else v[i] = 0;
+        }
+        
+        
+        for(int i = 1 ; i < n ;++i)
+        {
+            if(v[i] == v[i-1])return false;
+        }
+        
+        return true;
+        
 }
 /*----------------------------------------------------------------------------------------*/
 
@@ -21,5 +39,6 @@ int main()
 #endif
 
 
-  solve();
+    int t ; cin >> t;
+    while(t--)solve();
 }
