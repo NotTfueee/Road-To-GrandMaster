@@ -6,12 +6,30 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
-
 void solve()
 {
-    
-}
+    string s ; cin >> s;
 
+
+    int left = 0;
+    for(int i = 0 ; i <= 1 ; ++i)
+    {
+        if(s[i] == '1')left += 10;
+    }
+
+    left ++;
+
+    int right = 0;
+    for(int i = 2 ; i <= 3 ; ++i)
+    {
+        if(s[i] == '1')right += 10;
+    }
+
+    right ++;
+
+    cout << left * right << endl;
+    return;
+}
 /*----------------------------------------------------------------------------------------*/
 
 int main()

@@ -6,12 +6,23 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
-
 void solve()
 {
-    
-}
+    int n , m ; cin >> n >> m;
 
+    if(m > n )
+    {
+        cout << "NO" << endl;
+        return;
+    }
+
+    int extra = n - m;
+
+    if(extra &1)cout << "NO" << endl;
+    else cout << "YES" << endl;
+
+    return;
+}
 /*----------------------------------------------------------------------------------------*/
 
 int main()

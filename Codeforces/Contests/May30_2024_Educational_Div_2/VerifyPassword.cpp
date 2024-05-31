@@ -9,7 +9,13 @@ using namespace std;
 
 void solve()
 {
-    
+     int n ; cin >> n;
+    string s ; cin >> s;
+
+    if(is_sorted(s.begin() , s.end()))cout << "YES" << endl;
+    else cout << "NO" << endl;
+
+    return;
 }
 
 /*----------------------------------------------------------------------------------------*/
