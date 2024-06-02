@@ -6,9 +6,35 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
+const int MOD = 998244353;
+
+long long getCount(long long n , int x)
+{
+    long long seg = (n / (1LL << x));
+    long long on = (seg >> 1LL) * (1LL << x);
+    long long rem = (n % (1LL << x));
+
+    if(seg & 1LL)
+    {
+        on += rem;
+    }
+
+    return on;
+}
 void solve()
 {
-    
+    long long n , m ; cin >> n >> m;
+    long long ans = 0;
+
+    for(int i = 63 ; i >= 0 ; --i)
+    {
+        if((m >> i) & 1LL)
+        {
+            ans = (ans + getCount(n+1 , i)) % MOD;
+        }
+    }
+    cout << ans << endl;
+    return;
 }
 /*----------------------------------------------------------------------------------------*/
 
