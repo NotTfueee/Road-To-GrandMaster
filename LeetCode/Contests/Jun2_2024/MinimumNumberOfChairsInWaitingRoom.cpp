@@ -7,6 +7,24 @@ using namespace std;
 
 /*----------------------------------------------------------------------------------------*/
 
+int minimumChairs(string s) {
+        
+        int c = 0 , mx = 0;
+        
+        for(int i = 0 ; i < s.size() ; ++i)
+        {
+            if(s[i] == 'E')
+            {
+                c++;
+                mx = max(mx , c);
+                
+            }
+            else c--;
+        }
+        
+        return mx;
+}
+
 void solve()
 {
     
