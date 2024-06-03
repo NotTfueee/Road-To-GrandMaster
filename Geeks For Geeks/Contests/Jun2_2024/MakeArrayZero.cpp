@@ -6,6 +6,31 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
+
+int minimumOperations(int n, vector<int> &arr, int p, int q) 
+    {
+        
+        priority_queue<int> pq(arr.begin() , arr.end());
+        
+        int time = 0 , ans = 0;
+        
+        while(!pq.empty())
+        {
+            int val = pq.top() - time;
+            pq.pop();
+            
+            if(val <= 0)break;
+            
+            val -= p;
+            time += q;
+            ans ++;
+            
+            if(val > 0)pq.push(val + time);
+        }
+        
+        return ans;
+    }
+    
 void solve()
 {
     

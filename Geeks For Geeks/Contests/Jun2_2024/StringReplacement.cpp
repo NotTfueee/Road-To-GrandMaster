@@ -6,6 +6,24 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
+int countOperations(string s) 
+    {
+        
+        int n = s.size() , MOD = int(1e9+7) , count = 0 , ans = 0;
+        
+        for(int i = n - 1 ; i >= 0 ; --i)
+        {
+            if(s[i] == 'a')
+            {
+                ans = ((ans % MOD) + (count % MOD)) % MOD;
+                
+                count = ((count % MOD) * (2 % MOD)) % MOD;
+            }
+            else count++;
+        }
+        
+        return ans;
+    }    
 void solve()
 {
     

@@ -6,6 +6,17 @@ using namespace std;
 #define endl '\n'
 
 /*----------------------------------------------------------------------------------------*/
+string isPossible(int a, int b, int c) {
+        
+        if(a + b <= c)return "NO";
+        
+        if(a + c <= b)return "NO";
+        
+        if(b + c <= a)return "NO";
+        
+        
+        return "YES";
+    }    
 void solve()
 {
     
