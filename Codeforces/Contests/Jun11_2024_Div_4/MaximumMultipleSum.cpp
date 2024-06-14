@@ -1,7 +1,6 @@
 //File Created by -- > ANRAG
 //Created On -- > 09/06/24,Sun,Jun
 
-
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -10,9 +9,29 @@ using namespace std;
 #define endl '\n'
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
-void solve() 
-{
-    
+void solve() {
+    long long n ; cin>>n;
+
+    long long mx = 0 , num;
+
+    for(int i = 2 ; i <= n ; ++i)
+    {
+        long long sum = 0;
+        for(int j = 1 ; i * j <= n ; j++)
+        {
+            sum += (i * j);
+        }
+
+        if(sum > mx)
+        {
+            mx = sum ;
+            num = i;
+        }
+    }
+
+    cout << num << endl;
+    return;
+
 }
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
