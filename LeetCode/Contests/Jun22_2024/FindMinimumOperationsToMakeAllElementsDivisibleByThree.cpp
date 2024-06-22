@@ -7,6 +7,28 @@ using namespace std;
 #define endl '\n'
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
+
+ int minimumOperations(vector<int>& nums) {
+        
+        int n = nums.size() , c = 0;
+        for(int i = 0 ; i < n ; ++i)
+        {
+            if(nums[i] % 3 != 0)
+            {
+                int l = nums[i] / 3;
+                int r = l + 1;
+                
+                int c1 = abs(l*3 - nums[i]);
+                int c2 = abs(r*3 - nums[i]);
+                
+                c += min(c1 , c2);
+            }
+        }
+        
+        return c;
+        
+    }
+    
 void solve()
 {
 

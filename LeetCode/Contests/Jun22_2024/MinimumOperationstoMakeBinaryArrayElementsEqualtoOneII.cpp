@@ -7,6 +7,40 @@ using namespace std;
 #define endl '\n'
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
+int minOperations(vector<int>& nums) {
+
+        
+        int c = 1 , ans = 0 , n = nums.size() , o = 0 , z = 0;
+        
+        for(int i = 0 ; i < n ; ++i)
+        {
+            if(nums[i] == 0)z++;
+            else o++;
+        }
+        
+        if(!z)return 0;
+        
+        
+        for(int i = 0 ; i < n ; ++i)
+        {
+            if((nums[i] + c) % 2 != 0)
+            {
+                ans++;
+                z--;
+                
+                o ^= z;
+                z ^= o;
+                o ^= z;
+                
+                c++;
+                
+            }
+        }
+        
+        return ans;
+        
+    }
+    
 void solve()
 {
 
