@@ -1,5 +1,5 @@
 //File Created by -- > ANRAG
-//Created On -- > 08/07/24,Mon,Jul
+//Created On -- > 13/07/24,Sat,Jul
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -7,15 +7,28 @@ using namespace std;
 #define endl '\n'
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
-
 void solve()
 {
-    
+    int r , g , b ; cin >> r >> g >> b;
+    string s ; cin >> s;
+
+    if(s == "Blue")
+    {
+        cout << min(r , g) << endl;
+    }
+    else if(s == "Red")
+    {
+        cout << min(g , b) << endl;
+    }
+    else cout << min(r , b) << endl;
+
+    return;
 }
+
 /*--------------------------------------------------------------------------------------------------------------------------------------------*/
 
 int main() {
-    ZOOM
+    ZOOM;
 #ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
